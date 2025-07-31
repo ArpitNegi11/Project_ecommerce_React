@@ -10,7 +10,7 @@ const Cart = () => {
   }, []);
 
   const fetchCart = () => {
-    axios.get('http://localhost:3000/cart')
+    axios.get('https://project-ecommerce-react-backend.onrender.com/cart')
       .then((response) => {
         const grouped = groupByProduct(response.data);
         setCart(grouped);
@@ -34,13 +34,13 @@ const Cart = () => {
   };
 
   const reduceQuantity = (productId) => {
-    axios.delete(`http://localhost:3000/cart/reduce/${productId}`)
+    axios.delete(`https://project-ecommerce-react-backend.onrender.com/cart/reduce/${productId}`)
       .then(() => fetchCart())
       .catch((err) => console.error('Error reducing quantity:', err));
   };
 
   const deleteProduct = (productId) => {
-    axios.delete(`http://localhost:3000/cart/delete/${productId}`)
+    axios.delete(`https://project-ecommerce-react-backend.onrender.com/cart/delete/${productId}`)
       .then(() => fetchCart())
       .catch((err) => console.error('Error deleting product:', err));
   };

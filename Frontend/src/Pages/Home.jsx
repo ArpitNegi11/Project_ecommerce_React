@@ -14,7 +14,7 @@ const Home = () => {
 
   const getData = async () => {
     await axios
-      .get("http://localhost:3000/")
+      .get("https://project-ecommerce-react-backend.onrender.com/")
       .then((res) => {
         console.log(res.data.products);
         setProductData(res.data.products);
