@@ -28,7 +28,7 @@ const Home = () => {
     <div>
       <nav>
         <div className="left">
-          <Link to=" "><h2>Shopy</h2></Link>
+          <Link to="/admin"><h2>Shopy</h2></Link>
         </div>
         <div className='search'>
           <input type="text" />
