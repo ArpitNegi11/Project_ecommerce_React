@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import "./productDetail.css"
+import "./UserProduct.css"
 import axios from 'axios'
 import{ useState } from 'react';
 
