@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import "./UserProduct.css"
 import axios from 'axios'
-import{ useState } from 'react';
+import { useState } from 'react';
 
 // const [cart, setCart] = useState([]); // local cart state
 
@@ -15,56 +15,56 @@ import{ useState } from 'react';
 
 const ProductDetail = () => {
 
-   const {productId} = useParams()
-   const [productData, setProductData] = useState([]);
-    
-    useEffect(() => {
-        getProductDetail()
+  const { productId } = useParams()
+  const [productData, setProductData] = useState([]);
 
-    }, [productId])
-    const handleAddToCart = () => {
+  useEffect(() => {
+    getProductDetail()
+
+  }, [productId])
+  const handleAddToCart = () => {
     axios.post(`https://project-ecommerce-react-backend.onrender.com/cart/add/${productId}`)
       .then(response => alert('Product added to cart!'))
       .catch(error => console.error('Error adding to cart:', error));
   };
 
-    const getProductDetail = async()=>{
+  const getProductDetail = async () => {
 
-       await axios.get("https://project-ecommerce-react-backend.onrender.com/"+productId)
-        .then((res)=>{
-            console.log(res);
-            setProductData(res.data.product);
-            
-        })
-        .catch((err)=>{
-            console.log(err);
-        })
+    await axios.get("https://project-ecommerce-react-backend.onrender.com/" + productId)
+      .then((res) => {
+        console.log(res);
+        setProductData(res.data.product);
 
-    }
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+
+  }
 
   return (
     <div className='home'>
-     
+
       <div className="pr">
         <div><img src={productData.image} alt="Product" height="450px" /></div>
-            <div>
-                <div>
-                  <h1>{productData.title}</h1><br />
-                  <h2>Price: ₹{productData.price}</h2><br />
-                  <p>{productData.description}</p><br />
-                  <p><b>Category:</b> {productData.category}</p><br />
+        <div>
+          <div>
+            <h1>{productData.title}</h1><br />
+            <h2>Price: ₹{productData.price}</h2><br />
+            <p>{productData.description}</p><br />
+            <p><b>Category:</b> {productData.category}</p><br />
 
-                </div>
-                
-               <div className="buttons">
-                <button>Buy</button>
-                {/* <button>Add to cart</button> */}
-                <button onClick={handleAddToCart}>Add to cart</button>
-                {/* <button onClick={() => addToCart(productData)}>Add to Cart</button> */}
-                {/* <button onClick={addToCart()}>Add to cart</button> */}
-               </div>
+          </div>
 
-            </div>
+          <div className="buttons">
+            <button>Buy</button>
+            {/* <button>Add to cart</button> */}
+            <button onClick={handleAddToCart}>Add to cart</button>
+            {/* <button onClick={() => addToCart(productData)}>Add to Cart</button> */}
+            {/* <button onClick={addToCart()}>Add to cart</button> */}
+          </div>
+
+        </div>
 
       </div>
     </div>
