@@ -25,27 +25,27 @@ const Home = () => {
   };
 
   return (
-   <div>
-      <Navbar/>
-     <div className="container">
+    <div>
+      <Navbar />
+      <div className="container">
 
-      {productData.map((elem, index) => {
-        return <div className="card" key={index}>
-          <div className="top">
-            <img
-              src={elem.image}
-              alt=""
-              width="200px"
-            />
-          </div>
-          <div className="bottom">
-            <Link to={`/admin/products/detail/${elem._id}`}><h1>{elem.title}</h1></Link>
-            <h4>Price : {elem.price}</h4>
-          </div>
-        </div>;
-      })}
+        {productData.map((elem, index) => {
+          return <div className="card" key={index}>
+            <div className="top">
+              <img
+                src={elem.image}
+                alt=""
+                width="200px"
+              />
+            </div>
+            <div className="bottom">
+              <Link to={`/admin/products/detail/${elem._id}`}><h1>{elem.title}</h1></Link>
+              <h4>Price : {elem.price}</h4>
+            </div>
+          </div>;
+        })}
+      </div>
     </div>
-   </div>
   );
 };
 
