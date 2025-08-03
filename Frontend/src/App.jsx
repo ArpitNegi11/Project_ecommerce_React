@@ -9,6 +9,7 @@ import UserHome from './Pages/UserHome'
 import Cart from './Pages/Cart'
 import UserProduct from './Pages/UserProduct'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Register from './Pages/login'
 import { CartProvider } from "./Pages/CartContext";
 
 
@@ -24,6 +25,7 @@ const App = () => {
           <Route  path='/admin/' element={<Home/>}/>
           <Route  path='/admin/products/add' element={<AddProducts/>}/>
           <Route  path='/admin/products/detail/:productId'  element={<ProductDetail/>}/>
+          <Route  path='/users' element={<Register/>}/>
           </Routes>
       {/* </Router> */}
     {/* </CartProvider> */}

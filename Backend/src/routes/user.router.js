@@ -1,10 +1,13 @@
 const express = require("express")
 const bcrypt = require("bcrypt")
 const userModel = require("../models/user.model")
+const multer = require("multer");
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 
 const router = express.Router()
 
-router.post("/register",async (req, res)=>{
+router.post("/register", upload.none(),async (req, res)=>{
 
     const {username , email , password} = req.body
 
