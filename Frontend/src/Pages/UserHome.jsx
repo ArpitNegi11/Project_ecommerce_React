@@ -1,11 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./UserHome.css";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
 
 const Home = () => {
+const navigate = useNavigate();
   const [productData, setProductData] = useState([]);
 
   useEffect(() => {
