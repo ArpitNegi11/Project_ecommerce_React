@@ -14,7 +14,7 @@ const login = () => {
      const handleSubmit = (e) => {
         e.preventDefault();
         let formData = new FormData(e.target);
-        axios.post("http://localhost:3000/users/register", formData)
+        axios.post("https://project-ecommerce-react-backend.onrender.com/users/register", formData)
             .then((res) => {
                 console.log(res);
                 navigate("/")
