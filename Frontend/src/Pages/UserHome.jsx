@@ -37,8 +37,9 @@ const navigate = useNavigate();
         <div className="right">
           {/* <Link to="/admin/products/add">Add new Product</Link> */}
           <Link to="/Cart"><i class="ri-shopping-cart-fill"></i></Link>
+           <Link to="/users"><h1>Login</h1></Link>
         </div>
-        <div className="login"><h2 className="link" onClick={()=>{navigate('/users')}}>Login</h2></div>
+        {/* <div className="login"><h2 className="link" onClick={()=>{navigate('/users')}}>Login</h2></div> */}
       </nav>
 
       <div className="container">
